@@ -7,9 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   // metadataBase: new URL("htps://verbum-ai.com"),
-  title: "Verbum AI - Your Beloved AI Language Assistant",
-  description:
-    "Verbum AI adalah asisten bahasa digital berbasis AI yang siap membantu Anda dengan cerdas. Ia mendukung kebutuhan komunikasi, menjawab pertanyaan, dan menjadi teman setia dalam setiap langkah Anda.",
+  title: "Aina Chat - Your Beloved AI Platform",
 };
 
 export const viewport = {
