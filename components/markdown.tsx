@@ -2,7 +2,9 @@ import Link from 'next/link';
 import React, { memo } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 import { CodeBlock } from './code-block';
+import rehypeKatex from 'rehype-katex'
 
 const components: Partial<Components> = {
   // @ts-expect-error
@@ -93,11 +95,12 @@ const components: Partial<Components> = {
   },
 };
 
-const remarkPlugins = [remarkGfm];
+const remarkPlugins = [remarkGfm, remarkMath];
+const rehypePlugins = [rehypeKatex];
 
 const NonMemoizedMarkdown = ({ children }: { children: string }) => {
   return (
-    <ReactMarkdown remarkPlugins={remarkPlugins} components={components}>
+    <ReactMarkdown rehypePlugins={rehypePlugins} remarkPlugins={remarkPlugins} components={components}>
       {children}
     </ReactMarkdown>
   );
